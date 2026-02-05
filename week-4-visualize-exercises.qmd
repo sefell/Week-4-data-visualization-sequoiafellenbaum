@@ -1,0 +1,142 @@
+---
+title: "Visualize Data"
+author: "Your Name"
+format: gfm
+execute: 
+  echo: true
+  eval: true
+---
+
+
+<!-- If you get the error "Error in list2(na.rm = na.rm, ...) : object 'ffi_list2' not found" do the following in the Console run:  
+
+    remove.packages("rlang")
+
+Then Restart R to be safe. Then run:
+
+    install.packages("rlang")
+
+and again restart R to be safe. That should fix the problem (which is a package dependency issue).   -->
+
+
+
+Try your code again
+```{r}
+#| label: setup
+#| include: false
+
+
+
+```
+
+
+
+## Your Turn 0
+
+Add a setup chunk that loads the tidyverse packages.
+
+
+```{r}
+#| label: add-label-0
+head(mpg)
+```
+
+
+## Your Turn 1
+
+Run the code on the slide to make a graph. Pay strict attention to spelling, capitalization, and parentheses!
+
+```{r}
+#| label: add-label-1
+#add code
+```
+
+
+## Your Turn 2
+
+Replace this scatterplot with one that draws boxplots. Use the cheatsheet. Try your best guess.
+
+```{r}
+#| label: add-label-2
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = class, y = hwy))
+```
+
+
+## Your Turn 3
+
+Make a histogram of the `hwy` variable from `mpg`. Hint: do not supply a y variable.
+
+```{r}
+#| label: add-label-3
+```
+
+## Your Turn 4
+
+Use the help page for `geom_histogram` to make the bins 2 units wide.
+
+```{r}
+#| label: add-label-4
+```
+
+
+## Your Turn 5
+
+Add `color`, `size`, `alpha`, and `shape` aesthetics to your graph. Experiment.  
+
+```{r}
+#| label: add-label-5
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, 
+                           y = hwy))
+```
+
+## Help Me
+
+What do `facet_grid()` and `facet_wrap()` do? 
+(run the code, interpret, convince your group)
+
+```{r}
+#| label: add-label-help-me
+# Makes a plot that the commands below will modify
+q <- ggplot(mpg) + geom_point(aes(x = displ, y = hwy))
+
+q + facet_grid(. ~ cyl)
+q + facet_grid(drv ~ .)
+q + facet_grid(drv ~ cyl)
+q + facet_wrap(~ class)
+```
+
+
+## Your Turn 6
+
+Make a bar chart `class` colored by `class`. Use the help page for `geom_bar` to choose a "color" aesthetic for class.
+
+```{r}
+#| label: add-label-6
+```
+
+## Quiz
+
+What will this code do?
+
+```{r}
+ggplot(mpg) + 
+  geom_point(aes(displ, hwy)) +
+  geom_smooth(aes(displ, hwy)) 
+#  ggsave("example.jpg")
+```
+
+
+***
+
+# Take aways
+
+You can use this starter code template to make thousands of graphs with **ggplot2**.
+
+```{r}
+#| label: template
+#| eval: false
+ggplot(data = <DATA>) +
+  <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>))
+```
