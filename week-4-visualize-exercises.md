@@ -66,8 +66,6 @@ ggplot(mpg) +
   geom_histogram(aes(x = hwy))
 ```
 
-    `stat_bin()` using `bins = 30`. Pick better value `binwidth`.
-
 ![](week-4-visualize-exercises_files/figure-commonmark/histogram-mpg-hwy-1.png)
 
 ## Your Turn 4
@@ -185,8 +183,6 @@ ggplot(mpg) +
   geom_smooth(aes(displ, hwy)) 
 ```
 
-    `geom_smooth()` using method = 'loess' and formula = 'y ~ x'
-
 ![](week-4-visualize-exercises_files/figure-commonmark/test-code-1.png)
 
 ``` r
@@ -201,8 +197,6 @@ ggplot(mpg, aes(x=displ, y = hwy)) +
               method = "lm") + #linear regression model
   scale_color_viridis_d() #colorblind scale
 ```
-
-    `geom_smooth()` using formula = 'y ~ x'
 
 ![](week-4-visualize-exercises_files/figure-commonmark/universal-aesthetics-1.png)
 

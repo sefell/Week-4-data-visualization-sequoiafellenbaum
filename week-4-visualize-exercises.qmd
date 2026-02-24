@@ -5,6 +5,7 @@ format: gfm
 execute: 
   echo: true
   eval: true
+  warning: false
 ---
 
 
